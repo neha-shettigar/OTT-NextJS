@@ -8,7 +8,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.themoviedb.org',
-        port: 'localhost:3000',
+        port: '',
         pathname: '/t/p/w220_and_h330_face**',
       },
     ],

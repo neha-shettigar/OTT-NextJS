@@ -1,10 +1,11 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import styled from 'styled-components';
 interface MovieCardInterface {
   id?: string;
   title?: string;
   poster_path: string;
-  release_date?: string;
+  release_date: string;
 }
 
 const MovieCard = ({
@@ -17,7 +18,7 @@ const MovieCard = ({
  
 
   return (
-    <main>
+    <main >
       <section>
         <Link href={`/${id}`}>
           {/* loader is a function that generates the URLs for your image */}
@@ -29,11 +30,28 @@ const MovieCard = ({
             height={220}
           />
         </Link>
-        <h2>{title}</h2>
-        <h6>{release_date}</h6>
+        <Title>{title}</Title>
+        <Date>{release_date}</Date>
       </section>
     </main>
   );
 };
+
+const Title = styled.h1`
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 190px;
+  color: #e8d8f0;
+`;
+
+const Date = styled.div`
+  background-color: #170436;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 90vh;
+`;
 
 export default MovieCard;

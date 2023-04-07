@@ -1,0 +1,19 @@
+.layout-container{
+    display: flex;
+    background-color: #170436;
+    width: 100%;
+    padding: 1%;
+
+}
+
+
+.layout-container__nav{
+    display: flex;
+    gap: 2%;
+    width: 100%;
+}
+
+.layout-container__link{
+   color: #e8d8f0;
+   font-size: 1.5rem;
+}

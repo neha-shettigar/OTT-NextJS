@@ -3,7 +3,7 @@
 
 import React from 'react';
 import MovieCard from '../movieCard';
-import { log } from 'console';
+import styled from 'styled-components';
 
 export default function Dashboard() {
   const [movies, setMovies] = React.useState([]);
@@ -25,21 +25,48 @@ export default function Dashboard() {
     });
 
   return (
-    <main>
+    <Wrapper>
       <section>
-        <h1>Trending movies</h1>
+        <Title>Trending movies</Title>
       </section>
-      <section>
+      <Section>
         {movies.map((movie: any) => (
           <MovieCard
             key={movie.id}
             title={movie.title}
             poster_path={movie.poster_path}
-            release_date={movie.release_date}
+            release_date={
+              movie.release_date ? movie.release_date.substring(0, 4) : null
+            }
             id={movie.id}
           />
         ))}
-      </section>
-    </main>
+      </Section>
+    </Wrapper>
   );
 }
+
+const Wrapper = styled.div`
+  background-color: #170436;
+  display: flex;
+  flex-direction: column;
+
+  height: 90vh;
+`;
+
+const Title = styled.h1`
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 190px;
+  color: #e8d8f0;
+`;
+
+const Section = styled.div`
+  background-color: #170436;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 90vh;
+`;
