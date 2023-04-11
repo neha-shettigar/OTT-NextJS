@@ -18,8 +18,8 @@ const MovieCard = ({
  
 
   return (
-    <main >
-      <section>
+   
+      <Section>
         <Link href={`/${id}`}>
           {/* loader is a function that generates the URLs for your image */}
           <Image
@@ -32,8 +32,8 @@ const MovieCard = ({
         </Link>
         <Title>{title}</Title>
         <Date>{release_date}</Date>
-      </section>
-    </main>
+      </Section>
+    
   );
 };
 
@@ -42,16 +42,33 @@ const Title = styled.h1`
   font-style: normal;
   font-weight: 700;
   font-size: 1rem;
-  line-height: 190px;
-  color: #e8d8f0;
+  line-height: 30px;
+  text-align:center;
+  color: #170436;
+  margin: 0;
 `;
 
 const Date = styled.div`
-  background-color: #170436;
+  color: #170436;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 90vh;
+ 
+ 
 `;
+
+const Section = styled.div`
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:23rem;
+  width:10%;
+  background-color: #e8d8f0;
+  margin-bottom:2%;
+`;
+
+
+
 
 export default MovieCard;

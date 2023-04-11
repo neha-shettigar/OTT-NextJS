@@ -3,11 +3,11 @@
 import styled from 'styled-components';
 import { getLanguageName } from './getLanguage';
 
-// import Image from 'next/image';
+import Image from 'next/image';
 interface MovieDetailsInterface {
   id?: string;
   title?: string;
-  poster_path?: string;
+  poster_path: string;
   release_date?: string;
   status?: string;
     overview?: string;
@@ -34,22 +34,23 @@ const MovieDetails = ({
   return (
     <Wrapper>
       {/* loader is a function that generates the URLs for your image */}
-      {/* <Image
-          loader={() => imagePosterWithPrefix}
-          src={imagePosterWithPrefix}
-          alt=''
-          width={250}
-          height={320}
-        /> */}
-
-      <Title>{title}</Title>
-      <Status>{tagline}</Status>
-      <h5>{status}</h5>
-      <Date>{release_date}</Date>
-      <Overview>{overview}</Overview>
-      <h5>{genre}</h5>
-      <h5>{ratings}</h5>
-      <h5>{getLanguageName(language)}</h5>
+      <Image
+        loader={() => poster_path}
+        src={poster_path}
+        alt=''
+        width={350}
+        height={420}
+      />
+      <Details>
+        <Title>{title}</Title>
+        <Status>{tagline}</Status>
+        <Status>{status}</Status>
+        <Date>{release_date}</Date>
+        <Overview>{overview}</Overview>
+        <Status>{genre}</Status>
+        <Status>{ratings}</Status>
+        <Status>{getLanguageName(language)}</Status>
+      </Details>
     </Wrapper>
   );
 };
@@ -58,28 +59,41 @@ const MovieDetails = ({
 const Title = styled.h1`
   font-size: 1.5rem;
   text-align: center;
-  color: palevioletred;
+  color: #170436;
 `;
 
 // Create a Wrapper component that'll render a <section> tag with some styles
 const Wrapper = styled.section`
-  padding: 4em;
-  background: papayawhip;
+  display: flex;
+  margin-top: 4rem;
+  padding: 1.5rem 3rem;
+  background-color: #e8d8f0;
+  justify-content: space-between;
+  width:70%;
 `;
 
 const Date = styled.h4`
   font-size: 0.75rem;
   text-align: center;
+  color: #170436;
+`;
+
+const Details = styled.h4`
+  display: flex;
+  flex-direction: column;
+  width:50%;
 `;
 
 const Status = styled.h4`
   font-size: 0.75rem;
   text-align: center;
+  color: #170436;
 `;
 
 const Overview = styled.p`
   font-size: 0.75rem;
   text-align: center;
+  color: #170436;
 `;
 
 export default MovieDetails;

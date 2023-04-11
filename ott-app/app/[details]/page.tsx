@@ -24,8 +24,10 @@ export default async function Details({ params }: any) {
         key={result.id}
         id={result.id}
         title={result.title}
-        // poster_path={result.poster_path}
-        release_date={result.release_date? result.release_date.substring(0,4):null}
+        poster_path={imagePosterWithPrefix}
+        release_date={
+          result.release_date ? result.release_date.substring(0, 4) : null
+        }
         status={result.status}
         overview={result.overview}
         ratings={result.vote_average}

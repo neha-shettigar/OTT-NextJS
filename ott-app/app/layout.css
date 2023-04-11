@@ -17,3 +17,12 @@
    color: #e8d8f0;
    font-size: 1.5rem;
 }
+
+main, body{
+    background-color: #170436;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+}
